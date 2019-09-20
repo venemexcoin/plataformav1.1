@@ -12,5 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+Route::get('/terminos', function () {
+    return view('/info.terminos');
+});
+
+Route::get('/servImail', function () {
+    return view('/info.servImail');
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
