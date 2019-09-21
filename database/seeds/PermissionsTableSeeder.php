@@ -108,5 +108,39 @@ class PermissionsTableSeeder extends Seeder
             'slug'         => 'products.destroy',
             'description'  => 'ELiminar cualquier producto del sistema',
         ]);
+
+        // Administradores
+        Permission::create([
+            'name'         => 'Navegar Admin',
+            'slug'         => 'admin.index',
+            'description'  => 'Lista y navega por los Admin del sistema',
+        ]);
+
+
+        Permission::create([
+            'name'         => 'Ver detalles de los administradores',
+            'slug'         => 'admin.show',
+            'description'  => 'Ver en detalle cada administradores del sistema',
+        ]);
+
+
+        Permission::create([
+            'name'         => 'Creación de Admin',
+            'slug'         => 'admin.create',
+            'description'  => 'Editar cualquier dato de un administradores del sistema',
+        ]);
+
+        Permission::create([
+            'name'         => 'Edición de Admin',
+            'slug'         => 'admin.edit',
+            'description'  => 'Editar cualquier dato de un administradores del sistema',
+        ]);
+
+
+        Permission::create([
+            'name'         => 'Eliminar administradores',
+            'slug'         => 'admin.destroy',
+            'description'  => 'ELiminar cualquier administradores del sistema',
+        ]);
     }
 }

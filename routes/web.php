@@ -25,9 +25,15 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/admin', 'InicioController@index')->name('admin');
+
 // Routes
 
 Route::group(['middleware' => ['auth']], function () {
+
+    //Administracion
+        // Route::get('admin', 'InicioController@index')->name('admin.index')
+        // ->middleware('permission:admin.index');
 
     //Roles
         Route::post('roles/store', 'RoleController@store')->name('roles.store')
@@ -89,6 +95,29 @@ Route::group(['middleware' => ['auth']], function () {
 
         Route::get('users/{role}/edit', 'UserController@edit')->name('users.edit')
         ->middleware('permission:users.edit');
+
+        //Administradores
+
+        Route::post('inicio/store', 'InicioController@store')->name('inicio.store')
+        ->middleware('permission:inicio.create');
+
+        Route::get('inicio', 'InicioController@index')->name('inicio.index')
+        ->middleware('permission:inicio.index');
+
+        Route::get('inicio/create', 'InicioController@create')->name('inicio.create')
+        ->middleware('permission:inicio.create');
+
+        Route::put('inicio/{role}', 'InicioController@update')->name('inicio.update')
+        ->middleware('permission:inicio.edit');
+
+        Route::get('inicio/{role}', 'InicioController@show')->name('inicio.show')
+        ->middleware('permission:inicio.show');
+
+        Route::delete('inicio/{role}', 'InicioController@destroy')->name('inicio.destroy')
+        ->middleware('permission:inicio.destroy');
+
+        Route::get('inicio/{role}/edit', 'InicioController@edit')->name('inicio.edit')
+        ->middleware('permission:inicio.edit');
 
 });
 
