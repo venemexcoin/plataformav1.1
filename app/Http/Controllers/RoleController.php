@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
+use Caffeinated\Shinobi\Models\Role;
+use Caffeinated\Shinobi\Models\Permission;
+
 
 class RoleController extends Controller
 {
@@ -13,7 +17,9 @@ class RoleController extends Controller
      */
     public function index()
     {
-        //
+        $roles = Role::paginate();
+
+        return view('roles.index', compact('roles'));
     }
 
     /**
@@ -23,7 +29,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        //
+        return view('roles.create');
     }
 
     /**
@@ -34,7 +40,10 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $role = Product::create($request->all());
+
+        return redirect()->route('roles.edit', $role->id)
+            ->with('info', 'Producto guardado con éxito');
     }
 
     /**
@@ -43,9 +52,9 @@ class RoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Role $role)
     {
-        //
+        return view('roles.show', compact('role'));
     }
 
     /**
@@ -54,21 +63,31 @@ class RoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Role $role)
     {
-        //
+        $roles = Role::get();
+
+        return view('roles.edit', compact('role', 'roles'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Role $role)
     {
-        //
+
+        $role->update($request->all());
+
+        //actualizar roles
+
+        $role->roles()->sync($request->get('roles'));
+
+        return redirect()->route('roles.edit', $role->id)
+            ->with('info', 'Usuario actualizado con éxito');
     }
 
     /**
@@ -77,8 +96,10 @@ class RoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Role $role)
     {
-        //
+        $role->delete();
+
+        return back()->with('info', 'Eliminado correctamente');
     }
 }

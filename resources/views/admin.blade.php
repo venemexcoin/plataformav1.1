@@ -48,17 +48,7 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                        <div class="btn-group">
-                                <button type="button" class="btn btn-danger">1</button>
-                                <button type="button" class="btn btn-danger">2</button>
-
-                                <div class="btn-group">
-                                  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
-                                    <span class="caret"></span>
-                                  </button>
-
-                                </div>
-                              </div>
+                        {{ $products->render() }}
                 </div>
                 <!-- /.card-footer-->
               </div>

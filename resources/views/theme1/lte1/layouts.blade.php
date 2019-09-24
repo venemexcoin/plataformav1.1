@@ -10,7 +10,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
   <title>AdminLTE 3 | Top Navigation</title>
-  <link href="{{asset("fron/css/app.css")}}">
+  
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{asset("fron/$theme/plugins/fontawesome-free/css/all.min.css") }}">
   <!-- Theme style -->
@@ -18,12 +18,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <!-- CSS personales y de paginas  -->
+  <link href="{{asset("fron/css/app.css")}}">
 
 
-  @yield("styles.css")
+  @yield("styles")
 
 </head>
-<body class="hold-transition layout-top-nav black">
+<body class="hold-transition layout-top-nav">
 <div class="wrapper">
     <!--Header -->
     @include("theme1/$theme1/header")
@@ -33,13 +34,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!--ASIDE -->
 
      <!-- Main content -->
-     <div class="content">
+    
+        @if(session('info'))
             <div class="container">
+                <div class="row">
+                    <div class="col-md-4 offset-md-4">
+                    <div class="alert-success">
+                        {{ session('info') }}
+                    </div>
+                    </div>
+                </div>
+            </div>
+        @endif
+        <br/>
+        <br/>
+                <div class="container">
                <!-- contenido -->
                 @yield("content")
                <!-- /.contenido -->
-            </div>
-        </div>
+                </div>
+
 
 </div>
 
@@ -51,9 +65,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{asset("fron/$theme/plugins/bootstrap/js/bootstrap.bundle.min.js")}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset("fron/$theme/dist/js/adminlte.min.js")}}"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+@yield('scripts')
 <!-- CSS personales y de paginas  -->
 <script src="{{asset("fron/js/app.js")}}"></script>
-@yield("scripts")
+
 
 </body>
 </html>

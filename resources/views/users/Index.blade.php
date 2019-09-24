@@ -38,11 +38,11 @@
             <div class="card card-primary card-outline">
               <div class="card-header">
                   <span class="heders">Inicio</span>
-                @can('producs.create')
-              <a href="{{ route('products.create')}}" class="btn btn-primary btn-xs float-right">
+
+
                     crear
-                </a>
-            @endcan
+
+
               </div> <!-- /.card-body -->
               <div class="card-body">
                 <div>
@@ -61,29 +61,29 @@
                                       </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach ($products as $product)
+                                    @foreach ($users as $user)
                                         <tr>
-                                        <td>{{ $product->id }}</td>
-                                        <td>{{ $product->name }}</td>
+                                        <td>{{ $user->id }}</td>
+                                        <td>{{ $user->name }}</td>
                                         <td width="10px">
-                                        @can('products.show')
-                                        <a href="{{ route('products.show', $product->id)}}"
+                                        @can('users.show')
+                                        <a href="{{ route('users.show', $user->id)}}"
                                             class="btn btn-default btn-xs">
                                                 Ver
                                             </a>
                                         @endcan
                                         </td>
                                         <td width="10px">
-                                        @can('products.edit')
-                                        <a href="{{ route('products.edit', $product->id)}}"
+                                        @can('users.edit')
+                                        <a href="{{ route('users.edit', $user->id)}}"
                                             class="btn btn-default btn-xs">
                                                 Editar
                                             </a>
                                         @endcan
                                         </td>
                                         <td width="10px">
-                                        @can('products.destroy')
-                                            {!! Form::open(['route' => ['products.destroy', $product->id],
+                                        @can('users.destroy')
+                                            {!! Form::open(['route' => ['users.destroy', $user->id],
                                             'method' => 'DELETE'])!!}
                                             <button class="ntn btn-danger btn-xs">Eliminar</button>
                                             {!! Form::close() !!}
@@ -93,7 +93,7 @@
                                     @endforeach
                                     </tbody>
                                   </table>
-                                  {{ $products->render()}}
+                                  {{ $users->render()}}
                                 </div>
                                 <!-- /.card-body -->
                               </div>
