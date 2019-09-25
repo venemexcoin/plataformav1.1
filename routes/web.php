@@ -67,16 +67,16 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('products/create', 'ProductController@create')->name('products.create')
         ->middleware('permission:products.create');
 
-        Route::put('products/{role}', 'ProductController@update')->name('products.update')
+        Route::put('products/{product}', 'ProductController@update')->name('products.update')
         ->middleware('permission:products.edit');
 
-        Route::get('products/{role}', 'ProductController@show')->name('products.show')
+        Route::get('products/{product}', 'ProductController@show')->name('products.show')
         ->middleware('permission:products.show');
 
-        Route::delete('products/{role}', 'ProductController@destroy')->name('products.destroy')
+        Route::delete('products/{product}', 'ProductController@destroy')->name('products.destroy')
         ->middleware('permission:products.destroy');
 
-        Route::get('products/{role}/edit', 'ProductController@edit')->name('products.edit')
+        Route::get('products/{product}/edit', 'ProductController@edit')->name('products.edit')
         ->middleware('permission:products.edit');
 
     // Users
@@ -84,16 +84,16 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('users', 'UserController@index')->name('users.index')
         ->middleware('permission:users.index');
 
-        Route::put('users/{role}', 'UserController@update')->name('users.update')
+        Route::put('users/{user}', 'UserController@update')->name('users.update')
         ->middleware('permission:users.edit');
 
-        Route::get('users/{role}', 'UserController@show')->name('users.show')
+        Route::get('users/{user}', 'UserController@show')->name('users.show')
         ->middleware('permission:users.show');
 
-        Route::delete('users/{role}', 'UserController@destroy')->name('users.destroy')
+        Route::delete('users/{user}', 'UserController@destroy')->name('users.destroy')
         ->middleware('permission:users.destroy');
 
-        Route::get('users/{role}/edit', 'UserController@edit')->name('users.edit')
+        Route::get('users/{user}/edit', 'UserController@edit')->name('users.edit')
         ->middleware('permission:users.edit');
 
         //Administradores
@@ -107,16 +107,16 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('inicio/create', 'InicioController@create')->name('inicio.create')
         ->middleware('permission:inicio.create');
 
-        Route::put('inicio/{role}', 'InicioController@update')->name('inicio.update')
+        Route::put('inicio/{inicio}', 'InicioController@update')->name('inicio.update')
         ->middleware('permission:inicio.edit');
 
-        Route::get('inicio/{role}', 'InicioController@show')->name('inicio.show')
+        Route::get('inicio/{inicio}', 'InicioController@show')->name('inicio.show')
         ->middleware('permission:inicio.show');
 
-        Route::delete('inicio/{role}', 'InicioController@destroy')->name('inicio.destroy')
+        Route::delete('inicio/{inicio}', 'InicioController@destroy')->name('inicio.destroy')
         ->middleware('permission:inicio.destroy');
 
-        Route::get('inicio/{role}/edit', 'InicioController@edit')->name('inicio.edit')
+        Route::get('inicio/{inicio}/edit', 'InicioController@edit')->name('inicio.edit')
         ->middleware('permission:inicio.edit');
 
 });
