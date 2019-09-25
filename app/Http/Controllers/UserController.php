@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
-use App\User;
-use Caffeinated\Shinobi\Models\Role;
 
 
 class UserController extends Controller
@@ -17,9 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::paginate();
-
-        return view('users.index', compact('users'));
+        //
     }
 
     /**
@@ -49,9 +45,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show($id)
     {
-        return view('users.show', compact('user'));
+        //
     }
 
     /**
@@ -60,31 +56,21 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($id)
     {
-        $roles = Role::get();
-
-        return view('users.edit', compact('user', 'roles'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\User  $user
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,User $user)
+    public function update(Request $request, $id)
     {
-
-        $user->update($request->all());
-
-        //actualizar roles
-
-        $user->roles()->sync($request->get('roles'));
-
-        return redirect()->route('users.edit', $user->id)
-            ->with('info', 'Usuario actualizado con éxito');
+        //
     }
 
     /**
@@ -93,10 +79,8 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        $user->delete();
-
-        return back()->with('info', 'Eliminado correctamente');
+        //
     }
 }

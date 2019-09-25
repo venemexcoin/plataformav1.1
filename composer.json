@@ -9,7 +9,6 @@
     "license": "MIT",
     "require": {
         "php": "^7.2",
-        "biscolab/laravel-recaptcha": "^4.0",
         "caffeinated/shinobi": "^5.0",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.0",

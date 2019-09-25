@@ -143,8 +143,6 @@ return [
         'time'                  => 'hora',
         'subject'               => 'asunto',
         'message'               => 'mensaje',
-        'recaptcha'             => 'Hey!!! debes demostrar que no eres un robot',
     ],
-    'recaptcha' => 'Hey!!! debes demostrar que no eres un robot',
-];
 
+];

@@ -18,8 +18,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <!--Recaptcha metodo -->
-    {!! htmlScriptTagJsApi() !!}
 </head>
 <body>
     <div id="app">

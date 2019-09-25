@@ -60,22 +60,6 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
-                        <!--  RECAPTCHA formulario -->
-                        <div class="form-group row">
-
-                            <div class="col-md-6 offset-4">
-                                    {!! htmlFormSnippet() !!}
-
-                                    @error('g-recaptcha-response')
-                                    <span class="invalid-feedback" role="alert" style="display:block">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-
-                        <!--/. RECAPTCHA -->
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
