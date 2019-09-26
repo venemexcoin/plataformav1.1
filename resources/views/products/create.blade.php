@@ -1,13 +1,13 @@
 @extends("theme.$theme.layouts")
 
 @section("titles")
-Adnincion
+Product New
 @endsection
 @section("homeD")
-{{ route('home')}}
+{{ route('products.index')}}
 @endsection
 @section("homeT")
-Home
+Productos
 @endsection
 
 @section("styles")
@@ -15,12 +15,10 @@ Home
 @endsection
 
 @section('content')
- <h1>hola que transa</h1>
+
+{!!Form::open(['route' => 'products.store']) !!}
+    @include('products.partials.form')
+
+{!!Form::close() !!}
+
 @endsection
-
-@section('scripts')
-<script>
-
-</script>
-@endsection
-

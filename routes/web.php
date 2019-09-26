@@ -25,7 +25,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/admin', 'InicioController@index')->name('admin');
+
 
 // Routes
 
@@ -101,7 +101,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('inicio/store', 'InicioController@store')->name('inicio.store')
         ->middleware('permission:inicio.create');
 
-        Route::get('inicio', 'InicioController@index')->name('inicio.index')
+        Route::get('admin', 'InicioController@index')->name('inicio.index')
         ->middleware('permission:inicio.index');
 
         Route::get('inicio/create', 'InicioController@create')->name('inicio.create')
