@@ -30,6 +30,8 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-boxed">
+
+        <div id="app">
         <!-- Site wrapper -->
         <div class="wrapper">
             <!-- Inicio de Header -->
@@ -94,6 +96,7 @@
         </section>
         <!-- /.content -->
       </div>
+    </div>
       <!-- /.content-wrapper -->
       <!--Inicio Footer -->
       @include("theme/$theme/footer")

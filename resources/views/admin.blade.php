@@ -1,3 +1,4 @@
+
 @extends("theme.$theme.layouts")
 
 @section("titles")
@@ -22,5 +23,6 @@ Home
 <script>
 
 </script>
+
 @endsection
 

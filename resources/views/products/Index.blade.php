@@ -15,6 +15,7 @@ Panel Admi
 @endsection
 
 @section('content')
+
 <h1 class="prueba">Product system</h1>
 
 
@@ -92,6 +93,7 @@ Panel Admi
       <!-- /.card -->
     </div>
   </div>
+
 @endsection
 
 @section('scripts')

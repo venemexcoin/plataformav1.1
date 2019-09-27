@@ -27,11 +27,20 @@
         <link rel="stylesheet" href="{{asset("fron/$theme/plugins/summernote/summernote-bs4.css")}}">
         <!-- Google Font: Source Sans Pro -->
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+        <!--mensajes de alerta-->
+        <link rel="stylesheet" href="{{asset("fron/$theme/plugins/fontawesome-free/css/all.min.css")}}">
+        <link rel="stylesheet" href="{{asset("fron/$theme/plugins/toastr/toastr.min.css")}}">
+        <link rel="stylesheet" href="{{asset("fron/$theme/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css")}}">
+        <!-- CSS personal -->
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
         <link rel="stylesheet" href="{{asset("fron/css/app.css")}}">
     @yield('styles')
 
 </head>
 <body class="hold-transition sidebar-mini sidebar-collapse">
+
+
         <!-- Site wrapper -->
         <div class="wrapper">
           <!-- Navbar -->
@@ -63,8 +72,8 @@
             </section>
 
             <!-- Main content -->
-            <section class="content">
-              <div class="container-fluid">
+            <section class="content ">
+              <div class="container-fluid ">
                 <div class="row">
                   <div class="col-12">
                     <!-- Default box -->
@@ -72,7 +81,7 @@
                       <div class="card-header">
                         <h3 class="card-title">Title</h3>
 
-                        <div class="card-tools">
+                        <div class="card-tools sidebar-collapse">
                           <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                             <i class="fas fa-minus"></i></button>
                           <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
@@ -93,13 +102,21 @@
                 </div>
               </div>
             </section>
+            @if(session('info'))
+
+                    </div>
+                    @include('sweeltalert::alert')
+                </div>
+            @endif
             <!-- /.content -->
             <main class="py-4">
+
                     @yield('content')
+
             </main>
           </div>
           <!-- /.content-wrapper -->
-
+        </div>
 
 
           <!-- Footer -->
@@ -112,11 +129,19 @@
         <script src="{{asset("fron/$theme/plugins/bootstrap/js/bootstrap.bundle.min.js")}}"></script>
         <!-- AdminLTE App -->
         <script src="{{asset("fron/$theme/dist/js/adminlte.min.js")}}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="{{asset("fron/$theme/plugins/sweetalert2/sweetalert2.min.js")}}"></script>
+        <script src="{{asset("fron/$theme/plugins/toastr/toastr.min.js")}}"></script>
+
         <!-- AdminLTE for demo purposes -->
         <script src="{{asset("fron/$theme/dist/js/demo.js")}}"></script>
         <script src="{{asset("fron/js/app.js")}}"></script>
+
 
         @yield('scripts')
 
 </body>
 </html>
+
+
+
