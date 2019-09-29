@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Admin;
+
 use Caffeinated\Shinobi\Models\Role;
+use Caffeinated\Shinobi\Models\Permission;
 use Illuminate\Http\Request;
 
 

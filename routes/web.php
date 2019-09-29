@@ -23,13 +23,15 @@ Route::get('/servImail', function () {
 });
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
 
 
 
 // Routes
 
 Route::group(['middleware' => ['auth']], function () {
+
+    Route::get('/home', 'HomeController@index')->name('home');
 
     //Administracion
         // Route::get('admin', 'InicioController@index')->name('admin.index')
@@ -121,7 +123,7 @@ Route::group(['middleware' => ['auth']], function () {
 
         //Administradores
 
-        Route::resource('admin', 'AdminController@');
+        Route::resource('admin', 'AdminController');
 
 
 });
