@@ -104,8 +104,14 @@
             </section>
             @if(session('info'))
 
+                <div class="container">
+                    <div class="row">
+                        <div class="clo-md-8 offset-md-2">
+                            <div class="alert alert-success">
+                                {{ session('info') }}
+                            </div>
+                        </div>
                     </div>
-                    @include('sweeltalert::alert')
                 </div>
             @endif
             <!-- /.content -->
@@ -130,8 +136,13 @@
         <!-- AdminLTE App -->
         <script src="{{asset("fron/$theme/dist/js/adminlte.min.js")}}"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <script src="{{asset("fron/$theme/plugins/sweetalert2/sweetalert2.min.js")}}"></script>
-        <script src="{{asset("fron/$theme/plugins/toastr/toastr.min.js")}}"></script>
+        <script src="{{asset("fron/$theme/plugins/summernote/summernote-bs4.min.js")}}"></script>
+        <script>
+            $(function () {
+             // Summernote
+            $('.textarea').summernote()
+            })
+        </script>
 
         <!-- AdminLTE for demo purposes -->
         <script src="{{asset("fron/$theme/dist/js/demo.js")}}"></script>

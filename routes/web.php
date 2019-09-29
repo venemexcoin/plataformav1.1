@@ -119,6 +119,11 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('inicio/{inicio}/edit', 'InicioController@edit')->name('inicio.edit')
         ->middleware('permission:inicio.edit');
 
+        //Administradores
+
+        Route::resource('admin', 'AdminController@');
+
+
 });
 
 

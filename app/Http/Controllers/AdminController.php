@@ -2,14 +2,28 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\Admin;
 use Caffeinated\Shinobi\Models\Role;
 use Illuminate\Http\Request;
 
 
 
-class UserController extends Controller
+class AdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('permission:admin.create')->only(['create', 'store']);
+
+        $this->middleware('permission:admin.index')->only('index');
+
+        $this->middleware('permission:admin.edit')->only(['edit', 'update']);
+
+        $this->middleware('permission:admin.show')->only('show');
+
+        $this->middleware('permission:admin.destroy')->only('destroy');
+
+
+    }
     /**
      * Display a listing of the resource.
      *
@@ -17,9 +31,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::paginate();
-
-        return view('users.Index', compact('users'));
+        return view ('/admin');
     }
 
     /**
@@ -46,54 +58,54 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\User  $user
+     * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show(Admin $admin)
     {
-        return view('users.show', compact('user'));
+        return view('admins.show', compact('admin'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\User  $user
+     * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit(Admin $admin)
     {
         $roles = Role::get();
-        return view('users.edit', compact('user','roles'));
+        return view('admins.edit', compact('admin','roles'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\User  $user
+     * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, Admin $admin)
     {
         // Actualiza el usuario
-        $user->update($request->all());
+        $admin->update($request->all());
 
         // Actualizar Roles
-        $user->roles()->sync($request->get('roles'));
+        $admin->roles()->sync($request->get('roles'));
 
-        return redirect()->route('users.edit', $user->id)
-        ->with('info', 'Usero actualizado con éxito');
+        return redirect()->route('admins.edit', $admin->id)
+        ->with('info', 'Admino actualizado con éxito');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\User  $user
+     * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy(Admin $admin)
     {
-      $user->delete();
+      $admin->delete();
 
       return back()->with('info', 'Eliminado correctamente');
     }

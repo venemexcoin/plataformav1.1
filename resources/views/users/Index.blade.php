@@ -1,7 +1,7 @@
 @extends("theme.$theme.layouts")
 
 @section("titles")
-Product
+Usuarios
 @endsection
 @section("homeD")
 {{ route('admin.index')}}
@@ -16,19 +16,13 @@ Panel Admi
 
 @section('content')
 
-<h1 class="prueba">Product system</h1>
+<h1 class="prueba">User system</h1>
 
 
 <div class="row">
     <div class="col-md-8 offset-md-2">
       <div class="card">
         <div class="card-header">
-         @can('productd.create')
-         <a href="{{ route('products.create')}}" class="btn btn-xs btn-primary ">
-            crear
-        </a>
-         @endcan
-
 
           <div class="card-tools">
             <div class="input-group input-group-sm" style="width: 150px;">
@@ -51,27 +45,27 @@ Panel Admi
               </tr>
             </thead>
             <tbody>
-                @foreach ($products as $product)
+                @foreach ($users as $user)
                 <tr>
-                <td>{{ $product->id }}</td>
-                <td>{{ $product->name }}</td>
-                <td width="10px">
-                @can('products.show')
-                <a href="{{ route('products.show', $product->id) }}" class="btn btn-xs btn-default">
+                <td>{{ $user->id }}</td>
+                <td>{{ $user->name }}</td>
+                <td width="12px">
+                @can('users.show')
+                <a href="{{ route('users.show', $user->id) }}" class="btn btn-xs btn-default">
                         Ver
                 </a>
                 @endcan
                 </td>
-                <td width="10px">
-                    @can('products.edit')
-                    <a href="{{ route('products.edit', $product->id) }}" class="btn btn-xs btn-default">
+                <td width="12px">
+                    @can('users.edit')
+                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-xs btn-default">
                                 Editar
                     </a>
                     @endcan
                 </td>
-                <td width="10px">
-                    @can('products.destroy')
-                    {!!Form::open(['route' => ['products.destroy', $product->id],
+                <td width="12px">
+                    @can('users.destroy')
+                    {!!Form::open(['route' => ['users.destroy', $user->id],
                     'method' => 'DELETE'])!!}
                         <button class="btn btn-xs btn-danger">
                             Eliminar
@@ -89,7 +83,7 @@ Panel Admi
 
         <!-- /.card-body -->
       </div>
-      {{ $products->render() }}
+      {{ $users->render() }}
       <!-- /.card -->
     </div>
   </div>

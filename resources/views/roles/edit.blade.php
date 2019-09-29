@@ -1,14 +1,13 @@
-
 @extends("theme.$theme.layouts")
 
 @section("titles")
-Adnincion
+Roles Edit
 @endsection
 @section("homeD")
-{{ route('home')}}
+{{ route('roles.index')}}
 @endsection
 @section("homeT")
-Home
+Roles
 @endsection
 
 @section("styles")
@@ -17,12 +16,10 @@ Home
 
 @section('content')
 
+{!!Form::model($role, ['route' => ['roles.update', $role->id],
+'method' => 'PUT']) !!}
+    @include('roles.partials.form')
+
+{!!Form::close() !!}
+
 @endsection
-
-@section('scripts')
-<script>
-
-</script>
-
-@endsection
-

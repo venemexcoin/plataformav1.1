@@ -146,7 +146,7 @@
             </ul>
           </li>
           <li class="nav-item has-treeview">
-              @can('inicio.index')
+              @can('admin.index')
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>

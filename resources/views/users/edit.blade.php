@@ -1,14 +1,13 @@
-
 @extends("theme.$theme.layouts")
 
 @section("titles")
-Adnincion
+User Edit
 @endsection
 @section("homeD")
-{{ route('home')}}
+{{ route('users.index')}}
 @endsection
 @section("homeT")
-Home
+Usuarios
 @endsection
 
 @section("styles")
@@ -17,12 +16,10 @@ Home
 
 @section('content')
 
+{!!Form::model($user, ['route' => ['users.update', $user->id],
+'method' => 'PUT']) !!}
+    @include('users.partials.form')
+
+{!!Form::close() !!}
+
 @endsection
-
-@section('scripts')
-<script>
-
-</script>
-
-@endsection
-

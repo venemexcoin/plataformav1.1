@@ -1,7 +1,7 @@
 @extends("theme.$theme.layouts")
 
 @section("titles")
-Product
+Roles
 @endsection
 @section("homeD")
 {{ route('admin.index')}}
@@ -16,15 +16,15 @@ Panel Admi
 
 @section('content')
 
-<h1 class="prueba">Product system</h1>
+<h1 class="prueba">Roles system</h1>
 
 
 <div class="row">
     <div class="col-md-8 offset-md-2">
       <div class="card">
         <div class="card-header">
-         @can('productd.create')
-         <a href="{{ route('products.create')}}" class="btn btn-xs btn-primary ">
+         @can('roled.create')
+         <a href="{{ route('roles.create')}}" class="btn btn-xs btn-primary ">
             crear
         </a>
          @endcan
@@ -46,32 +46,32 @@ Panel Admi
             <thead>
               <tr>
                 <th width="10px">ID</th>
-                <th>Nombre</th>
+                <th>Role</th>
                 <th colspan="3">&nbsp;</th>
               </tr>
             </thead>
             <tbody>
-                @foreach ($products as $product)
+                @foreach ($roles as $role)
                 <tr>
-                <td>{{ $product->id }}</td>
-                <td>{{ $product->name }}</td>
+                <td>{{ $role->id }}</td>
+                <td>{{ $role->name }}</td>
                 <td width="10px">
-                @can('products.show')
-                <a href="{{ route('products.show', $product->id) }}" class="btn btn-xs btn-default">
+                @can('roles.show')
+                <a href="{{ route('roles.show', $role->id) }}" class="btn btn-xs btn-default">
                         Ver
                 </a>
                 @endcan
                 </td>
                 <td width="10px">
-                    @can('products.edit')
-                    <a href="{{ route('products.edit', $product->id) }}" class="btn btn-xs btn-default">
+                    @can('roles.edit')
+                    <a href="{{ route('roles.edit', $role->id) }}" class="btn btn-xs btn-default">
                                 Editar
                     </a>
                     @endcan
                 </td>
                 <td width="10px">
-                    @can('products.destroy')
-                    {!!Form::open(['route' => ['products.destroy', $product->id],
+                    @can('roles.destroy')
+                    {!!Form::open(['route' => ['roles.destroy', $role->id],
                     'method' => 'DELETE'])!!}
                         <button class="btn btn-xs btn-danger">
                             Eliminar
@@ -89,7 +89,7 @@ Panel Admi
 
         <!-- /.card-body -->
       </div>
-      {{ $products->render() }}
+      {{ $roles->render() }}
       <!-- /.card -->
     </div>
   </div>

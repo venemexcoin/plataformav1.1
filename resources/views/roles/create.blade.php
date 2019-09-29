@@ -1,14 +1,13 @@
-
 @extends("theme.$theme.layouts")
 
 @section("titles")
-Adnincion
+Roles New
 @endsection
 @section("homeD")
-{{ route('home')}}
+{{ route('roles.index')}}
 @endsection
 @section("homeT")
-Home
+Productos
 @endsection
 
 @section("styles")
@@ -17,12 +16,9 @@ Home
 
 @section('content')
 
-@endsection
+{!!Form::open(['route' => 'roles.store']) !!}
+    @include('roles.partials.form')
 
-@section('scripts')
-<script>
-
-</script>
+{!!Form::close() !!}
 
 @endsection
-
