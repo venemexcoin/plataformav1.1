@@ -18,6 +18,14 @@
                                             {{ Form::label('description', 'Descripción del producto', ['class' => 'etiquetaF']) }}
                                             {{ Form::text('description', null, ['class' => 'form-control']) }}
                                     </div>
+                                    <div class="form-group">
+                                            {{ Form::label('price', 'Precio fiat del Producto', ['class' => 'etiquetaF']) }}
+                                            {{ Form::text('price', null, ['class' => 'form-control']) }}
+                                    </div>
+                                    <div class="form-group">
+                                            {{ Form::label('cripto', 'Precio cripto del Producto', ['class' => 'etiquetaF']) }}
+                                            {{ Form::text('cripto', null, ['class' => 'form-control']) }}
+                                    </div>
                             </div>
                             <!--/.card body-->
 

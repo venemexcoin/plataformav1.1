@@ -35,6 +35,14 @@ Productos
 
               <p>{{$product->description}}</p>
             </div>
+            <div class="callout callout-success">
+                <h5>Precio fiat del Producto</h5>
+                <p>{{$product->price}}</p>
+            </div>
+            <div class="callout callout-warning">
+                <h5>Precio Cripto del Producto</h5>
+                <p>{{$product->cripto}}</p>
+            </div>
 
           </div>
           <!-- /.card-body -->

@@ -35,5 +35,7 @@ class AppServiceProvider extends ServiceProvider
 
         view::share('theme1', 'lteError');
         view::share('theme2', 'lteError');
+        view::share('theme3', 'lteError');
+        view::share('theme4', 'lteError');
     }
 }
