@@ -33,9 +33,6 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/home', 'HomeController@index')->name('home');
 
-    //Administracion
-        // Route::get('admin', 'InicioController@index')->name('admin.index')
-        // ->middleware('permission:admin.index');
 
     //Roles
         Route::post('roles/store', 'RoleController@store')->name('roles.store')

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Caffeinated\Shinobi\Models\permission;
+use Caffeinated\Shinobi\Models\Permission;
 use Caffeinated\Shinobi\Models\Role;
 use Illuminate\Http\Request;
 
@@ -29,7 +29,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        $permissions = permission::get();
+        $permissions = Permission::get();
 
         return view('roles.create', compact('permissions'));
     }
@@ -70,7 +70,7 @@ class RoleController extends Controller
      */
     public function edit(Role $role)
     {
-        $permissions = permission::get();
+        $permissions = Permission::get();
 
         return view('roles.edit', compact('role','permissions'));
     }
