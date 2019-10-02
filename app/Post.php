@@ -3,6 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
+use App\Category;
+use App\Tad;
 
 class Post extends Model
 {
@@ -12,12 +15,12 @@ class Post extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::tag);
+        return $this->belongsTo(User::class);
     }
 
     public function category()
     {
-        return $this->belongsTo(Category::tag);
+        return $this->belongsTo(Category::class);
     }
 
     public function tags(){

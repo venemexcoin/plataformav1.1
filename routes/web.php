@@ -35,6 +35,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('blog', 'Web\PageController@blog')->name('blog');
 
+    Route::get('blog/{slug}', 'Web\PageController@post')->name('post');
+
 
     //Roles
         Route::post('roles/store', 'RoleController@store')->name('roles.store')

@@ -44,11 +44,11 @@
         <!-- Site wrapper -->
         <div class="wrapper">
           <!-- Navbar -->
-          @include("theme/$theme/header")
+          @include("theme1/$theme5/header")
           <!-- /.navbar -->
 
           <!-- Main Sidebar Container -->
-          @include("theme/$theme/aside")
+          @include("theme1/$theme5/aside")
           <!-- /. Main Sidebar Container -->
 
           <!-- Content Wrapper. Contains page content -->
@@ -63,7 +63,7 @@
                   <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                       <li class="breadcrumb-item"><a href="@yield("homeD")">@yield("homeT")</a></li>
-                      <li class="breadcrumb-item"><a href="#">Layout</a></li>
+                      <li class="breadcrumb-item"><a href="@yield("homeL")">@yield("layout")</a></li>
                       <li class="breadcrumb-item active">Collapsed Sidebar</li>
                     </ol>
                   </div>
@@ -71,8 +71,8 @@
               </div><!-- /.container-fluid -->
             </section>
 
-           
-           
+
+
             <main class="py-4">
 
                     @yield('content')
@@ -84,7 +84,7 @@
 
 
           <!-- Footer -->
-          @include("theme/$theme/footer")
+          @include("theme1/$theme5/footer")
           <!--/.Footer -->
 
         <!-- jQuery -->

@@ -1,7 +1,7 @@
 @extends("theme.$theme.layouts")
 
 @section("titles")
-Adnincion
+Home
 @endsection
 @section("homeD")
 {{ route('home')}}

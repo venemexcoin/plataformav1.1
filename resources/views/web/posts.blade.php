@@ -6,8 +6,14 @@ Blog
 @section("homeD")
 {{ route('home')}}
 @endsection
+@section("homeL")
+{{ route('blog')}}
+@endsection
 @section("homeT")
 Home
+@endsection
+@section("layout")
+Inicio
 @endsection
 
 @section("styles")
@@ -32,37 +38,39 @@ Home
 
  <!-- Main content -->
             <section class="content ">
-              <div class="container-fluid ">
+
                 <div class="row">
-                  <div class="col-12">
+                  <div class="col-md-8 offset-md-2">
                   @foreach ($posts as $post)
 
                     <!-- Default box -->
                     <div class="card">
                     <!--card header -->
-                    <div class="card-header">
+                    <div class="card-header blog-header">
                         {{$post->name}}
                     </div>
                     <!--/.card header -->
-                    <!--card body -->  
+                    <!--card body -->
                       <div class="card-body">
                        @if($post->file)
-                       <img src="{{ $post->file }}" class="img-responsive">
+                       <img src="{{ $post->file }}" class="img-fluid">
                        @endif
-                       {{$post->excerpt }}
-                       
+                       {{ $post->excerpt }}
+                      <a href="{{ route('post', $post->slug ) }}" class="float-right">Lee más</a>
                       </div>
                     <!--/.card body -->
                     <!-- /.card-body -->
                       <div class="card-footer">
                         Footer
-                      </div>
+                      </div><hr/>
                       <!-- /.card-footer-->
                       @endforeach
+
+                      {{ $posts->render()}}
                   </div>
                 </div>
               </div>
-            </div>
+
             </section>
 
 
