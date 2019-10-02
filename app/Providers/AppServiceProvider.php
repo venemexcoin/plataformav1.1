@@ -32,10 +32,12 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         view::share('theme', 'lte');
-
+      
         view::share('theme1', 'lteError');
         view::share('theme2', 'lteError');
         view::share('theme3', 'lteError');
         view::share('theme4', 'lteError');
+        view::share('theme5',   'frone');
+
     }
 }

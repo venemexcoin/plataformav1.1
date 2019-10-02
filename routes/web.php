@@ -33,6 +33,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/home', 'HomeController@index')->name('home');
 
+    Route::get('blog', 'Web\PageController@blog')->name('blog');
+
 
     //Roles
         Route::post('roles/store', 'RoleController@store')->name('roles.store')

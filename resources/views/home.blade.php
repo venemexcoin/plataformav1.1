@@ -1,6 +1,12 @@
 @extends("theme.$theme.layouts")
 
 @section("titles")
+Adnincion
+@endsection
+@section("homeD")
+{{ route('home')}}
+@endsection
+@section("homeT")
 Home
 @endsection
 
@@ -9,12 +15,13 @@ Home
 @endsection
 
 @section('content')
- 
+
 @endsection
 
 @section('scripts')
 <script>
 
 </script>
+
 @endsection
 

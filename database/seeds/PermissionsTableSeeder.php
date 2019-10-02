@@ -142,5 +142,141 @@ class PermissionsTableSeeder extends Seeder
             'slug'         => 'admin.destroy',
             'description'  => 'ELiminar cualquier administradores del sistema',
         ]);
+
+        // Categorias del blog
+        Permission::create([
+            'name'         => 'Navegar categoria blog',
+            'slug'         => 'category.index',
+            'description'  => 'Lista y navega el categoria blog del sistema',
+        ]);
+
+
+        Permission::create([
+            'name'         => 'Ver detalles de las categoria',
+            'slug'         => 'category.show',
+            'description'  => 'Ver en detalle cada categoria del sistema',
+        ]);
+
+
+        Permission::create([
+            'name'         => 'Creación de categoria blog',
+            'slug'         => 'category.create',
+            'description'  => 'Editar cualquier dato de las categorias del sistema',
+        ]);
+
+        Permission::create([
+            'name'         => 'Edición de categoria blog',
+            'slug'         => 'category.edit',
+            'description'  => 'Editar cualquier dato de un categoria del sistema',
+        ]);
+
+
+        Permission::create([
+            'name'         => 'Eliminar categorias del blog',
+            'slug'         => 'category.destroy',
+            'description'  => 'ELiminar cualquier categoria del sistema',
+        ]);
+
+         // Etiqutas del blog
+         Permission::create([
+            'name'         => 'Navegar etiqueta blog',
+            'slug'         => 'tag.index',
+            'description'  => 'Lista y navega el etiqueta blog del blog',
+        ]);
+
+
+        Permission::create([
+            'name'         => 'Ver detalles de las etiqueta del blog',
+            'slug'         => 'tag.show',
+            'description'  => 'Ver en detalle cada etiqueta del blog',
+        ]);
+
+
+        Permission::create([
+            'name'         => 'Creación de etiqueta blog',
+            'slug'         => 'tag.create',
+            'description'  => 'Editar cualquier dato de las etiquetas del blog',
+        ]);
+
+        Permission::create([
+            'name'         => 'Edición de categorias blog',
+            'slug'         => 'tag.edit',
+            'description'  => 'Editar cualquier dato de un etiqueta del blog',
+        ]);
+
+
+        Permission::create([
+            'name'         => 'Eliminar etiquetas del blog',
+            'slug'         => 'tag.destroy',
+            'description'  => 'ELiminar cualquier etiqueta del blog',
+        ]);
+
+        // post del blog
+        Permission::create([
+            'name'         => 'Navegar post blog',
+            'slug'         => 'post.index',
+            'description'  => 'Lista y navega el post del blog',
+        ]);
+
+
+        Permission::create([
+            'name'         => 'Ver detalles de las post del blog',
+            'slug'         => 'post.show',
+            'description'  => 'Ver en detalle cada post del blog',
+        ]);
+
+
+        Permission::create([
+            'name'         => 'Creación de post blog',
+            'slug'         => 'post.create',
+            'description'  => 'Editar cualquier dato de las posts del blog',
+        ]);
+
+        Permission::create([
+            'name'         => 'Edición de categorias blog',
+            'slug'         => 'post.edit',
+            'description'  => 'Editar cualquier dato de un post del blog',
+        ]);
+
+
+        Permission::create([
+            'name'         => 'Eliminar posts del blog',
+            'slug'         => 'post.destroy',
+            'description'  => 'ELiminar cualquier post del blog',
+        ]);
+
+        // Archivos Zip
+        Permission::create([
+            'name'         => 'Navegar archivos zip',
+            'slug'         => 'download.index',
+            'description'  => 'Lista y navega el archivos zip del blog',
+        ]);
+
+
+        Permission::create([
+            'name'         => 'Ver detalles de los archivos zip del blog',
+            'slug'         => 'download.show',
+            'description'  => 'Ver en detalle cada archivos zip del blog',
+        ]);
+
+
+        Permission::create([
+            'name'         => 'Creación de archivos zip',
+            'slug'         => 'download.create',
+            'description'  => 'Editar cualquier dato de las archivos zip del blog',
+        ]);
+
+        Permission::create([
+            'name'         => 'Edición de categorias blog',
+            'slug'         => 'download.edit',
+            'description'  => 'Editar cualquier dato de un archivos zip del blog',
+        ]);
+
+
+        Permission::create([
+            'name'         => 'Eliminar archivos zip del blog',
+            'slug'         => 'download.destroy',
+            'description'  => 'ELiminar cualquier archivos zip del blog',
+        ]);
     }
 }
