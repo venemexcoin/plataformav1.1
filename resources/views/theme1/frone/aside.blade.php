@@ -184,6 +184,109 @@
               @endcan
             </ul>
           </li>
+          <!--Admin Blog -->
+          <li class="nav-item has-treeview">
+                @can('admin.index')
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-book"></i>
+                <p>
+                  Admin Blog
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+                  @endcan
+
+
+              <ul class="nav nav-treeview">
+                  @can('tags.index')
+                <li class="nav-item">
+                <a href="{{ route('tags.index')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Etiquetas</p>
+                  </a>
+                </li>
+                @endcan
+                @can('categories.index')
+                <li class="nav-item">
+                  <a href="{{ route('categories.index')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Categoria</p>
+                  </a>
+                </li>
+                @endcan
+                @can('posts.index')
+                <li class="nav-item">
+                  <a href="{{ route('posts.index')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Entradas</p>
+                  </a>
+                </li>
+                @endcan
+              </ul>
+            </li>
+            <!--/.Admin Blog -->
+
+            {{-- Admin --}}
+            <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                      <i class="nav-icon fas fa-edit"></i>
+                      <p>
+                        Forms
+                        <i class="fas fa-angle-left right"></i>
+                      </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href="pages/forms/general.html" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>General Elements</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="pages/forms/advanced.html" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Advanced Elements</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="pages/forms/editors.html" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Editors</p>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                      <i class="nav-icon fas fa-table"></i>
+                      <p>
+                        Tables
+                        <i class="fas fa-angle-left right"></i>
+                      </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href="pages/tables/simple.html" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Simple Tables</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="pages/tables/data.html" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>DataTables</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="pages/tables/jsgrid.html" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>jsGrid</p>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  {{-- /.Admin --}}
+
           <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-plus-square"></i>

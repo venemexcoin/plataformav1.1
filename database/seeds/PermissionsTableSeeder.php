@@ -146,68 +146,68 @@ class PermissionsTableSeeder extends Seeder
         // Categorias del blog
         Permission::create([
             'name'         => 'Navegar categoria blog',
-            'slug'         => 'category.index',
+            'slug'         => 'categories.index',
             'description'  => 'Lista y navega el categoria blog del sistema',
         ]);
 
 
         Permission::create([
             'name'         => 'Ver detalles de las categoria',
-            'slug'         => 'category.show',
+            'slug'         => 'categories.show',
             'description'  => 'Ver en detalle cada categoria del sistema',
         ]);
 
 
         Permission::create([
             'name'         => 'Creación de categoria blog',
-            'slug'         => 'category.create',
+            'slug'         => 'categories.create',
             'description'  => 'Editar cualquier dato de las categorias del sistema',
         ]);
 
         Permission::create([
             'name'         => 'Edición de categoria blog',
-            'slug'         => 'category.edit',
+            'slug'         => 'categories.edit',
             'description'  => 'Editar cualquier dato de un categoria del sistema',
         ]);
 
 
         Permission::create([
             'name'         => 'Eliminar categorias del blog',
-            'slug'         => 'category.destroy',
+            'slug'         => 'categories.destroy',
             'description'  => 'ELiminar cualquier categoria del sistema',
         ]);
 
          // Etiqutas del blog
          Permission::create([
             'name'         => 'Navegar etiqueta blog',
-            'slug'         => 'tag.index',
+            'slug'         => 'tags.index',
             'description'  => 'Lista y navega el etiqueta blog del blog',
         ]);
 
 
         Permission::create([
             'name'         => 'Ver detalles de las etiqueta del blog',
-            'slug'         => 'tag.show',
+            'slug'         => 'tags.show',
             'description'  => 'Ver en detalle cada etiqueta del blog',
         ]);
 
 
         Permission::create([
             'name'         => 'Creación de etiqueta blog',
-            'slug'         => 'tag.create',
+            'slug'         => 'tags.create',
             'description'  => 'Editar cualquier dato de las etiquetas del blog',
         ]);
 
         Permission::create([
             'name'         => 'Edición de categorias blog',
-            'slug'         => 'tag.edit',
+            'slug'         => 'tags.edit',
             'description'  => 'Editar cualquier dato de un etiqueta del blog',
         ]);
 
 
         Permission::create([
             'name'         => 'Eliminar etiquetas del blog',
-            'slug'         => 'tag.destroy',
+            'slug'         => 'tags.destroy',
             'description'  => 'ELiminar cualquier etiqueta del blog',
         ]);
 

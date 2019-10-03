@@ -145,6 +145,8 @@
               </li>
             </ul>
           </li>
+
+          <!-- Administracion permisos y productos -->
           <li class="nav-item has-treeview">
               @can('admin.index')
             <a href="#" class="nav-link">
@@ -184,6 +186,49 @@
               @endcan
             </ul>
           </li>
+            <!--/. Administracion permisos y productos -->
+           <!--Admin Blog -->
+           <li class="nav-item has-treeview">
+                @can('admin.index')
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-book"></i>
+                <p>
+                  Admin Blog
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+                  @endcan
+
+
+              <ul class="nav nav-treeview">
+                  @can('tags.index')
+                <li class="nav-item">
+                <a href="{{ route('tags.index')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Etiquetas</p>
+                  </a>
+                </li>
+                @endcan
+                @can('categories.index')
+                <li class="nav-item">
+                  <a href="{{ route('categories.index')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Categoria</p>
+                  </a>
+                </li>
+                @endcan
+                @can('posts.index')
+                <li class="nav-item">
+                  <a href="{{ route('posts.index')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Entradas</p>
+                  </a>
+                </li>
+                @endcan
+              </ul>
+            </li>
+            <!--/.Admin Blog -->
+
           <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-plus-square"></i>

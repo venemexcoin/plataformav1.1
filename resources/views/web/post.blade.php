@@ -33,7 +33,7 @@ blog
           <hr>
            <span class="blog-header">Categorías</span>
            <br>
-        <a href="#">{{ $post->category->name }}</a>
+        <a href="{{ route('category',$post->category->slug) }}">{{ $post->category->name }}</a>
         </div>
         <!-- /.user-block -->
         <div class="card-tools">
@@ -57,7 +57,7 @@ blog
         <hr>
          <span>Etiquetas</span>
          @foreach ($post->tags as $tag)
-         <a href="#">
+         <a href="{{ route('tag',$tag->slug) }}">
             {{$tag->name }}
          </a>
 
