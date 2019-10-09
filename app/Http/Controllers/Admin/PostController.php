@@ -3,9 +3,16 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use Caffeinated\Shinobi\Models\Role;
 use Caffeinated\Shinobi\Models\Permission;
+use App\Http\Requests\PostUpdateRequest;
+use App\Http\Requests\PostStoreRequest;
+use App\Post;
+use App\Category;
+use App\Tag;
+
 
 class PostController extends Controller
 {
@@ -21,8 +28,8 @@ class PostController extends Controller
 
         $this->middleware('permission:posts.destroy')->only('destroy');
 
-
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -30,7 +37,11 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::orderBy('id', 'DESC')
+        //->where('user_id', auth()->user()->id) pasar solo los aticulo del cliente
+        ->paginate();
+
+        return view('admin.posts.index', compact('posts'));
     }
 
     /**
@@ -40,7 +51,10 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
+        $tags = Tag::orderBy('name', 'ASC')->get();
+
+        return view('admin.posts.create', compact('categories', 'tags'));
     }
 
     /**
@@ -49,9 +63,19 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostStoreRequest $request)
     {
-        //
+        $post = Post::create($request->all());
+
+        if($request->file('file')){
+            $path = Storage::disk('public')->put('image',$request->file('file'));
+            $post->fill(['file' => asset($path)])->save();
+        }
+            //Tags
+        $post->tags()->attach($request->get('tags'));
+
+        return redirect()->route('posts.edit', compact('post'))
+        ->with('info', 'Entrada creada con éxito');
     }
 
     /**
@@ -62,7 +86,9 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::find($id);
+
+        return view('admin.posts.show', compact('post'));
     }
 
     /**
@@ -73,7 +99,12 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories = Category::orderBy('name', 'ASC')->pluck('name', 'id');
+        $tags = Tag::orderBy('name', 'ASC')->get();
+
+        $post = Post::find($id);
+
+        return view('admin.posts.edit', compact('post', 'categories', 'tags'));
     }
 
     /**
@@ -83,9 +114,23 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PostUpdateRequest $request, $id)
     {
-        //
+
+        $post = Post::find($id);
+
+        $post->fill($request->all())->save();
+
+        // IMAGE
+        if($request->file('file')){
+            $path = Storage::disk('public')->put('image',$request->file('file'));
+            $post->fill(['file' => asset($path)])->save();
+        }
+            //Tags
+        $post->tags()->sync($request->get('tags'));
+
+        return redirect()->route('posts.edit', $post->id)
+            ->with('info', 'Entrada actualizada con éxito');
     }
 
     /**
@@ -96,6 +141,8 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::find($id)->delete();
+
+        return back()->with('info', 'Eliminado correctamente');
     }
 }

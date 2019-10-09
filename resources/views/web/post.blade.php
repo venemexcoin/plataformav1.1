@@ -6,20 +6,19 @@ Blog
 @section("homeD")
 {{ route('home')}}
 @endsection
-@section("homeL")
+@section("layoutR")
 {{ route('blog')}}
 @endsection
 @section("homeT")
 Home
 @endsection
 @section("layout")
-blog
+Blog
 @endsection
 
 @section("styles")
 
 @endsection
-
 @section('content')
 <div class="row">
 <div class="col-md-8 offset-md-2">
@@ -27,7 +26,7 @@ blog
     <div class="card card-widget">
       <div class="card-header">
         <div class="user-block">
-          <img class="img-circle" src="{{asset("fron/$theme/dist/img/user1-128x128.jpg")}}" alt="User Image">
+          <img class="img-circle" src="{{auth::user()->avatar}}" alt="User Image">
           <span class="username"><a href="#">Jonathan Burke Jr.</a></span>
           <span class="description">{{$post->name}}</span>
           <hr>

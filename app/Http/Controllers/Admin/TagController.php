@@ -7,6 +7,9 @@ use App\Http\Controllers\Controller;
 use Caffeinated\Shinobi\Models\Role;
 use Caffeinated\Shinobi\Models\Permission;
 use App\Tag;
+use App\Http\Requests\TagStoreRequest;
+use App\Http\Requests\TagUpdateRequest;
+
 
 class TagController extends Controller
 {
@@ -52,9 +55,12 @@ class TagController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TagStoreRequest $request)
     {
         $tag = Tag::create($request->all());
+
+        return redirect()->route('tags.edit', compact('tag'))
+        ->with('info', 'Etiqueta creada con éxito');
     }
 
     /**
@@ -65,7 +71,9 @@ class TagController extends Controller
      */
     public function show($id)
     {
-        //
+        $tag = Tag::find($id);
+
+        return view('admin.tags.show', compact('tag'));
     }
 
     /**
@@ -76,7 +84,9 @@ class TagController extends Controller
      */
     public function edit($id)
     {
-        //
+        $tag = Tag::find($id);
+
+        return view('admin.tags.edit', compact('tag'));
     }
 
     /**
@@ -86,9 +96,14 @@ class TagController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TagUpdateRequest $request, $id)
     {
-        //
+        $tag = Tag::find($id);
+
+        $tag->fill($request->all())->save();
+
+        return redirect()->route('tags.edit', $tag->id)
+            ->with('info', 'Etiqueta actualizada con éxito');
     }
 
     /**
@@ -99,6 +114,8 @@ class TagController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tag = Tag::find($id)->delete();
+
+        return back()->with('info', 'Eliminado correctamente');
     }
 }

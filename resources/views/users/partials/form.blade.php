@@ -61,9 +61,11 @@
                                         {{ Form::text('bss', null, ['class' => 'form-control']) }}
                                     </div>
                                     <div class="form-group">
-                                        {{ Form::label('avatar', 'Avatar del cliente del cliente', ['class' => 'etiquetaF']) }}
-                                        {{ Form::text('avatar', null, ['class' => 'form-control']) }}
-                                </div>
+                                        <div class="custom-file">
+                                            {{ Form::label('avatar', 'archivo')}}
+                                            {{ Form::file('avatar')}}
+                                        </div>
+                                     </div>
                             </div>
                             <!--/.card body-->
 

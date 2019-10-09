@@ -14,7 +14,13 @@
       <!-- Sidebar user (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{asset("fron/$theme/dist/img/user2-160x160.jpg")}}" class="img-circle elevation-2" alt="User Image">
+           <!--imagen del avatar---->
+
+     @if(Auth::user()->avatar == '')
+     <a href="{{ route("#")}}"><img src="{{ asset('fron/img/avatar/IDM.jpg')}}" class="img-circle elevation-2" alt="User Image"></a>
+     @else
+      <img src="{{Auth::user()->avatar }}" class="img-circle elevation-2">
+     @endif
         </div>
         <div class="info">
           <a href="#" class="d-block">{{ Auth::user()->name }}</a>

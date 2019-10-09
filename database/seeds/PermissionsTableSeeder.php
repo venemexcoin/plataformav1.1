@@ -211,38 +211,38 @@ class PermissionsTableSeeder extends Seeder
             'description'  => 'ELiminar cualquier etiqueta del blog',
         ]);
 
-        // post del blog
+        // Entrradas  del blog post
         Permission::create([
-            'name'         => 'Navegar post blog',
-            'slug'         => 'post.index',
-            'description'  => 'Lista y navega el post del blog',
+            'name'         => 'Navegar entradas blog',
+            'slug'         => 'posts.index',
+            'description'  => 'Lista y navega el entradas del blog',
         ]);
 
 
         Permission::create([
-            'name'         => 'Ver detalles de las post del blog',
-            'slug'         => 'post.show',
-            'description'  => 'Ver en detalle cada post del blog',
+            'name'         => 'Ver detalles de las entradas del blog',
+            'slug'         => 'posts.show',
+            'description'  => 'Ver en detalle cada entradas del blog',
         ]);
 
 
         Permission::create([
-            'name'         => 'Creación de post blog',
-            'slug'         => 'post.create',
-            'description'  => 'Editar cualquier dato de las posts del blog',
+            'name'         => 'Creación de entradas blog',
+            'slug'         => 'posts.create',
+            'description'  => 'Editar cualquier dato de las entradas del blog',
         ]);
 
         Permission::create([
-            'name'         => 'Edición de categorias blog',
-            'slug'         => 'post.edit',
-            'description'  => 'Editar cualquier dato de un post del blog',
+            'name'         => 'Edición de entradas blog',
+            'slug'         => 'posts.edit',
+            'description'  => 'Editar cualquier dato de un entradas del blog',
         ]);
 
 
         Permission::create([
-            'name'         => 'Eliminar posts del blog',
-            'slug'         => 'post.destroy',
-            'description'  => 'ELiminar cualquier post del blog',
+            'name'         => 'Eliminar entradas del blog',
+            'slug'         => 'posts.destroy',
+            'description'  => 'ELiminar cualquier entradas del blog',
         ]);
 
         // Archivos Zip

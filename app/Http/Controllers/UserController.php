@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Storage;
 use App\User;
 use Caffeinated\Shinobi\Models\Role;
 use Illuminate\Http\Request;
@@ -40,7 +41,17 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = User::create($request->all());
+
+        // Imagen
+        if($request->file('avatar')){
+            $path = Storage::disk('public')->put('vavatar', $request->file('avatar'));
+            $user->fill(['avatar' => asset($path)])->save();
+        }
+        $user->users()->sync($request->get('users'));
+
+        return redirect()->route('users.edit', $user->id)
+         ->with('info', 'Entrada creada con exito');
     }
 
     /**
@@ -77,6 +88,12 @@ class UserController extends Controller
     {
         // Actualiza el usuario
         $user->update($request->all());
+
+         // Imagen
+         if($request->file('avatar')){
+            $path = Storage::disk('public')->put('vavatar', $request->file('avatar'));
+            $user->fill(['avatar' => asset($path)])->save();
+        }
 
         // Actualizar Roles
         $user->roles()->sync($request->get('roles'));

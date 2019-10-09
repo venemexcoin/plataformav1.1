@@ -22,20 +22,6 @@ Inicio
 
 @section('content')
 
- @if(session('info'))
-
-                <div class="container">
-                    <div class="row">
-                        <div class="clo-md-8 offset-md-2">
-                            <div class="alert alert-success">
-                                {{ session('info') }}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endif
-            <!-- /.content -->
-
  <!-- Main content -->
             <section class="content ">
 
@@ -55,7 +41,9 @@ Inicio
                        @if($post->file)
                        <img src="{{ $post->file }}" class="img-fluid">
                        @endif
+
                        {{ $post->excerpt }}
+
                       <a href="{{ route('post', $post->slug ) }}" class="float-right">Lee más</a>
                       </div>
                     <!--/.card body -->

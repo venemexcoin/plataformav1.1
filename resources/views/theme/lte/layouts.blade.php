@@ -115,6 +115,23 @@
                 </div>
             @endif
             <!-- /.content -->
+             <!-- /.mensajes Errores-->
+             @if(count($errors))
+             <div class="container">
+                 <div class="row">
+                     <div class="clo-md-8 offset-md-2">
+                         <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         @endif
+          <!-- /.mensajes Errores-->
             <main class="py-4">
 
                     @yield('content')

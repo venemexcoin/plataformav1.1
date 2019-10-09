@@ -22,16 +22,16 @@ class CreatePostsTable extends Migration
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->string('name', 128);
             $table->string('slug', 128)->unique();
-            $table->mediumText('except')->nullable();
+            $table->mediumText('excerpt')->nullable();
             $table->text('body');
             $table->enum('status', ['PUBLISHED', 'DRAFT'])->default('DRAFT');
-            $table->string('file', 128)->nullable();
+            $table->string('file')->nullable();
             $table->string('zip')->nullable();
             $table->float('price')->default(0,0);
             $table->double('cripto', 100,8)->default(0.00000000);
             $table->timestamps();
 
-           
+
         });
     }
 

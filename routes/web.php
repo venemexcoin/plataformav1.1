@@ -137,6 +137,8 @@ Route::group(['middleware' => ['auth']], function () {
 
         Route::resource('posts',      'Admin\PostController');
 
+        Route::resource('downloads',      'Admin\DownloadController');
+
 
 });
 

@@ -10,7 +10,7 @@ use App\Tad;
 class Post extends Model
 {
     protected $fillable = [
-        'user_id', 'category_id', 'name', 'except', 'body', 'status', 'file', 'zip', 'price', 'cripto'
+        'user_id', 'category_id', 'name', 'slug','excerpt', 'body', 'status', 'file', 'zip', 'price', 'cripto'
     ];
 
     public function user()

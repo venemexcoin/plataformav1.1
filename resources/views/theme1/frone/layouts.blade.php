@@ -63,16 +63,44 @@
                   <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                       <li class="breadcrumb-item"><a href="@yield("homeD")">@yield("homeT")</a></li>
-                      <li class="breadcrumb-item"><a href="@yield("homeL")">@yield("layout")</a></li>
+                      <li class="breadcrumb-item"><a href="@yield("layoutR")">@yield("layout")</a></li>
                       <li class="breadcrumb-item active">Collapsed Sidebar</li>
                     </ol>
                   </div>
                 </div>
               </div><!-- /.container-fluid -->
             </section>
+            <!-- mensajes -->
+            @if(session('info'))
+            <div class="container">
+                    <div class="row">
+                        <div class="clo-md-8 offset-md-2">
+                            <div class="alert alert-success">
+                                {{ session('info') }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endif
+            <!-- /.mensajes -->
 
-
-
+            <!-- /.mensajes Errores-->
+            @if(count($errors))
+                <div class="container">
+                    <div class="row">
+                        <div class="clo-md-8 offset-md-2">
+                            <div class="alert alert-danger">
+                               <ul>
+                                   @foreach ($errors->all() as $error)
+                               <li>{{ $error }}</li>
+                                   @endforeach
+                               </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endif
+             <!-- /.mensajes Errores-->
             <main class="py-4">
 
                     @yield('content')

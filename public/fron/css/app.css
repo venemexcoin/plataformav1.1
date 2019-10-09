@@ -18,6 +18,11 @@
     src: url("../css/ttf/LuckiestGuy-Regular.ttf");
 }
 
+@font-face {
+    font-family: "LuckiestGuy-Regular";
+    src: url("../css/ttf/Anton-Regular.ttf");
+}
+
 .saldo {
 
     font-size: 11px;
@@ -62,7 +67,23 @@
 }
 
 .blog-header {
-    font-size: 20px;
-    color: rgb(103, 150, 243);
-    font-family: heroesassembleital2;
+    font-size: 30px;
+    color: rgb(190, 188, 172);
+    font-family: Anton-Regular;
+}
+
+.botonV {
+    font-family: SairaStencilOne-Regular;
+    color: rgb(45, 45, 241);
+}
+
+.botonE {
+    font-family: SairaStencilOne-Regular;
+    color: rgb(36, 148, 49);
+
+}
+
+.botonD {
+    font-family: SairaStencilOne-Regular;
+    color: rgb(241, 45, 45);
 }

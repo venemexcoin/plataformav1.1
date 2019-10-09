@@ -17,7 +17,7 @@ Usuarios
 @section('content')
 
 {!!Form::model($user, ['route' => ['users.update', $user->id],
-'method' => 'PUT']) !!}
+'method' => 'PUT','files' => true]) !!}
     @include('users.partials.form')
 
 {!!Form::close() !!}
