@@ -7,7 +7,7 @@ Crear Entrada
 {{ route('home')}}
 @endsection
 @section("layoutR")
-{{ route('posts.index')}}
+{{ route('tags.index')}}
 @endsection
 @section("homeT")
 Home

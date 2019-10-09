@@ -48,7 +48,7 @@ class UserController extends Controller
             $path = Storage::disk('public')->put('vavatar', $request->file('avatar'));
             $user->fill(['avatar' => asset($path)])->save();
         }
-        $user->users()->sync($request->get('users'));
+        $user->users()->attach($request->get('users'));
 
         return redirect()->route('users.edit', $user->id)
          ->with('info', 'Entrada creada con exito');

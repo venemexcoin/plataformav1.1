@@ -1,13 +1,19 @@
 @extends("errors/$theme1/303/layouts")
 
 @section("titles")
-403 Error Page
+Error 403
 @endsection
 @section("homeD")
 {{ route('home')}}
 @endsection
+@section("layoutR")
+{{ route('blog')}}
+@endsection
 @section("homeT")
-Panel Admi
+Home
+@endsection
+@section("layout")
+Blog
 @endsection
 
 @section("styles")
@@ -26,8 +32,8 @@ Panel Admi
               </div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="{{'home'}}">Home</a></li>
-                  <li class="breadcrumb-item active">404 Error Page</li>
+                  <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
+                  <li class="breadcrumb-item active">403 Error Page</li>
                 </ol>
               </div>
             </div>

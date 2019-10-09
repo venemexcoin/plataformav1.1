@@ -6,14 +6,14 @@ Blog
 @section("homeD")
 {{ route('home')}}
 @endsection
-@section("homeL")
+@section("layoutR")
 {{ route('blog')}}
 @endsection
 @section("homeT")
 Home
 @endsection
 @section("layout")
-Inicio
+Blog
 @endsection
 
 @section("styles")
