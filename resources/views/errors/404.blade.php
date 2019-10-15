@@ -1,4 +1,4 @@
-@extends("errors/$theme2/304/layouts")
+@extends("errors/$theme2/404/layouts")
 
 @section("titles")
 304 Error Page

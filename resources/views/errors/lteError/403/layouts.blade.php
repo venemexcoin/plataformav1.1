@@ -42,11 +42,11 @@
         <!-- Site wrapper -->
         <div class="wrapper">
           <!-- Navbar -->
-          @include("errors/$theme2/304/header")
+          @include("errors/$theme1/403/header")
           <!-- /.navbar -->
 
           <!-- Main Sidebar Container -->
-          @include("errors/$theme2/304/aside")
+          @include("errors/$theme1/303/aside")
           <!-- /. Main Sidebar Container -->
 
           <!-- Content Wrapper. Contains page content -->
@@ -56,7 +56,7 @@
               <div class="container-fluid">
                 <div class="row mb-2">
                   <div class="col-sm-6">
-                    <h1 class="e404title">@yield("titles")</h1>
+                    <h1 class="e403title">@yield("titles")</h1>
                   </div>
 
                 </div>
@@ -88,7 +88,7 @@
 
 
           <!-- Footer -->
-          @include("errors/$theme2/304/footer")
+          @include("errors/$theme1/303/footer")
           <!--/.Footer -->
 
         <!-- jQuery -->

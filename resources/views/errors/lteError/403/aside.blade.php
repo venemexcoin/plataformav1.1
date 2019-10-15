@@ -15,7 +15,7 @@
           <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
                 @if(Auth::user()->avatar == '')
-                <a href="#"><img src="{{ asset('fron/img/avatar/IDM.jpg')}}" class="img-circle elevation-2" alt="User Image"></a>
+                <a href="{{ route("#")}}"><img src="{{ asset('fron/img/avatar/IDM.jpg')}}" class="img-circle elevation-2" alt="User Image"></a>
                 @else
                  <img src="{{Auth::user()->avatar }}" class="img-circle elevation-2">
                 @endif
@@ -24,7 +24,9 @@
                      <a href="#" class="d-block">{{ Auth::user()->name }}</a>
                 </div>
             </div>
-           
+            <div class="info">
+              <a href="#" class="d-block">{{ Auth::user()->name }}</a>
+            </div>
           </div>
           <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div>

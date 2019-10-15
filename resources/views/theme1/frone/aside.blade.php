@@ -17,7 +17,7 @@
            <!--imagen del avatar---->
 
      @if(Auth::user()->avatar == '')
-     <a href="{{ route("#")}}"><img src="{{ asset('fron/img/avatar/IDM.jpg')}}" class="img-circle elevation-2" alt="User Image"></a>
+     <a href="#"><img src="{{ asset('fron/img/avatar/IDM.jpg')}}" class="img-circle elevation-2" alt="User Image"></a>
      @else
       <img src="{{Auth::user()->avatar }}" class="img-circle elevation-2">
      @endif
@@ -40,66 +40,95 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Dashboard
+                Servicios
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../../index.html" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v1</p>
+                  <p>IMEI Servisios</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../../index2.html" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v2</p>
+                  <p>Servicios Creditos</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../../index3.html" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v3</p>
+                  <p>Box Unlock</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                 Historial
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>IMEI Información</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/forms/advanced.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Expediente</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/forms/editors.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Servicio de otro tipo</p>
                 </a>
               </li>
             </ul>
           </li>
           <li class="nav-item">
-            <a href="../widgets.html" class="nav-link">
+            <a href="{{route('blog')}}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Widgets
+                Blog
                 <span class="right badge badge-danger">New</span>
               </p>
             </a>
           </li>
 
           <li class="nav-item has-treeview">
-            <a href="{{route('blog')}}" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
-                Blog
+                Estadisticas del servicio
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('blog')}}" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Blog todos</p>
+                  <p>Activos</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="../charts/flot.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Flot</p>
+                  <p>En Pausa</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="../charts/inline.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Inline</p>
+                  <p>Dañados</p>
                 </a>
               </li>
             </ul>
@@ -233,64 +262,8 @@
             <!--/.Admin Blog -->
 
             {{-- Admin --}}
-            <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                      <i class="nav-icon fas fa-edit"></i>
-                      <p>
-                        Forms
-                        <i class="fas fa-angle-left right"></i>
-                      </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                      <li class="nav-item">
-                        <a href="pages/forms/general.html" class="nav-link">
-                          <i class="far fa-circle nav-icon"></i>
-                          <p>General Elements</p>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="pages/forms/advanced.html" class="nav-link">
-                          <i class="far fa-circle nav-icon"></i>
-                          <p>Advanced Elements</p>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="pages/forms/editors.html" class="nav-link">
-                          <i class="far fa-circle nav-icon"></i>
-                          <p>Editors</p>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                      <i class="nav-icon fas fa-table"></i>
-                      <p>
-                        Tables
-                        <i class="fas fa-angle-left right"></i>
-                      </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                      <li class="nav-item">
-                        <a href="pages/tables/simple.html" class="nav-link">
-                          <i class="far fa-circle nav-icon"></i>
-                          <p>Simple Tables</p>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="pages/tables/data.html" class="nav-link">
-                          <i class="far fa-circle nav-icon"></i>
-                          <p>DataTables</p>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="pages/tables/jsgrid.html" class="nav-link">
-                          <i class="far fa-circle nav-icon"></i>
-                          <p>jsGrid</p>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
+
+
                   {{-- /.Admin --}}
 
           <li class="nav-item has-treeview menu-open">
@@ -307,7 +280,7 @@
                 onclick="event.preventDefault();
                             document.getElementById('loguot-form').submit();">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Login</p>
+                  <p>Logout</p>
                 </a>
             <form id="loguot-form" action="{{ route('logout') }}" method="POST"
                     style="display:none">
@@ -315,15 +288,15 @@
                 </form>
               </li>
               <li class="nav-item">
-                <a href="../examples/register.html" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Register</p>
+                  <p>Perfil</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../examples/lockscreen.html" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Lockscreen</p>
+                  <p>Foro</p>
                 </a>
               </li>
 

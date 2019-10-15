@@ -32,7 +32,9 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view ('/admin');
+        $permisos = Permission::orderBy('id', 'DESC')->paginate();
+
+        return view('admin.permisos.index', compact('permisos'));
     }
 
     /**
@@ -42,7 +44,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-       //
+        return view('admin.permisos.create');
     }
 
     /**
@@ -53,7 +55,11 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $permiso = Permission::create($request->all());
+
+        return redirect()->route('permisos.edit', compact('permiso'))
+        ->with('info', 'categorías creada con éxito');
     }
 
     /**
@@ -62,9 +68,11 @@ class AdminController extends Controller
      * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function show(Admin $admin)
+    public function show($id)
     {
-        return view('admins.show', compact('admin'));
+        $permiso = Permission::find($id);
+
+        return view('admin.permisos.show', compact('permiso'));
     }
 
     /**
@@ -73,12 +81,12 @@ class AdminController extends Controller
      * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function edit(Admin $admin)
+    public function edit($id)
     {
-        $roles = Role::get();
-        return view('admins.edit', compact('admin','roles'));
-    }
+        $permiso = Permission::find($id);
 
+        return view('admin.permisos.edit', compact('permiso'));
+    }
     /**
      * Update the specified resource in storage.
      *
@@ -86,17 +94,16 @@ class AdminController extends Controller
      * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Admin $admin)
+     public function update(Request $request, $id)
     {
-        // Actualiza el usuario
-        $admin->update($request->all());
+        $permiso = Permission::find($id);
 
-        // Actualizar Roles
-        $admin->roles()->sync($request->get('roles'));
+        $permiso->fill($request->all())->save();
 
-        return redirect()->route('admins.edit', $admin->id)
-        ->with('info', 'Admino actualizado con éxito');
+        return redirect()->route('admin.edit', $permiso->id)
+            ->with('info', 'categorías actualizada con éxito');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -104,10 +111,10 @@ class AdminController extends Controller
      * @param  \App\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Admin $admin)
+    public function destroy($id)
     {
-      $admin->delete();
+        $permiso = Permission::find($id)->delete();
 
-      return back()->with('info', 'Eliminado correctamente');
+        return back()->with('info', 'Eliminado correctamente');
     }
 }

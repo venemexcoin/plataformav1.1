@@ -1,7 +1,7 @@
-@extends("errors/$theme1/403/layouts")
+@extends("errors/$theme6/303/layouts")
 
 @section("titles")
-Error 403
+Error 303
 @endsection
 @section("homeD")
 {{ route('home')}}
@@ -33,7 +33,7 @@ Blog
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
-                  <li class="breadcrumb-item active">403 Error Page</li>
+                  <li class="breadcrumb-item active">303 Error Page</li>
                 </ol>
               </div>
             </div>
@@ -43,10 +43,10 @@ Blog
         <!-- Main content -->
         <section class="content">
           <div class="error-page">
-            <h2 class="headline text-danger">403</h2>
+            <h2 class="headline text-danger">303</h2>
 
             <div class="error-content">
-              <h3><i class="fas fa-exclamation-triangle text-danger"></i> Oops!Not have Authorization.</h3>
+              <h3><i class="fas fa-exclamation-triangle text-danger"></i> Oops! Something went wrong.</h3>
 
               <p>
                 We will work on fixing that right away.

@@ -1,4 +1,4 @@
-@extends("theme.$theme.layouts")
+@extends("theme1.$theme5.layouts")
 
 @section("titles")
 Product New
