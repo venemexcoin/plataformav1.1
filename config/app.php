@@ -177,6 +177,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Caffeinated\Shinobi\ShinobiServiceProvider::class,
         RealRashid\SweetAlert\SweetAlertServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
 
     ],
 
@@ -231,6 +232,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
     ],
 
