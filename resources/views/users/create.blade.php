@@ -1,13 +1,19 @@
-@extends("theme.$theme.layouts")
+@extends("theme1.$theme5.layouts")
 
 @section("titles")
-Product New
+Crear 
 @endsection
 @section("homeD")
-{{ route('products.index')}}
+{{ route('home')}}
+@endsection
+@section("homeL")
+{{ route('user.index')}}
 @endsection
 @section("homeT")
-Productos
+Home
+@endsection
+@section("layout")
+blog
 @endsection
 
 @section("styles")

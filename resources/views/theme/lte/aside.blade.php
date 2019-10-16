@@ -18,7 +18,7 @@
         <!--imagen del avatar---->
 
      @if(Auth::user()->avatar == '')
-     <a href="{{ route('#')}}"><img src="{{ asset('fron/img/avatar/IDM.jpg')}}" class="img-circle elevation-2" alt="User Image"></a>
+     <a href="#"><img src="{{ asset('fron/img/avatar/IDM.jpg')}}" class="img-circle elevation-2" alt="User Image"></a>
      @else
       <img src="{{Auth::user()->avatar }}" class="img-circle elevation-2">
      @endif

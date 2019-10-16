@@ -1,12 +1,18 @@
-@extends("theme.$theme.layouts")
+@extends("theme1.$theme5.layouts")
 
 @section("titles")
-User Edit
+Ediatar usuario
 @endsection
 @section("homeD")
+{{ route('home')}}
+@endsection
+@section("homeL")
 {{ route('users.index')}}
 @endsection
 @section("homeT")
+Home
+@endsection
+@section("layout")
 Usuarios
 @endsection
 

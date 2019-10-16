@@ -1,3 +1,6 @@
+@section('styles')
+<link rel="stylesheet" href="{{ asset("fron/vendor/bootstrap-fileinput/css/fileinput.min.css")}}">
+@endsection
 <section class="content">
         <div class="container-fluid">
           <div class="row">
@@ -32,9 +35,10 @@
                                         </ul>
                                     <hr>
                                     </div>
+
                                     <div class="form-group">
-                                            {{ Form::label('email', 'Email del cliente', ['class' => 'etiquetaF']) }}
-                                            {{ Form::text('email', null, ['class' => 'form-control']) }}
+                                        {{ Form::label('email', 'Email del cliente', ['class' => 'etiquetaF']) }}
+                                        {{ Form::text('email', null, ['class' => 'form-control']) }}
                                     </div>
                                     <div class="form-group">
                                         {{ Form::label('btc', 'Saldo en Bitcoin del cliente', ['class' => 'etiquetaF']) }}
@@ -81,7 +85,14 @@
             </div>
           </div>
         </div>
+
+ <script>
+
+ </script>
 </section>
+@section('scripts')
+
+@endsection
 
 
 

@@ -45,7 +45,7 @@ class UserController extends Controller
 
         // Imagen
         if($request->file('avatar')){
-            $path = Storage::disk('public')->put('vavatar', $request->file('avatar'));
+            $path = Storage::disk('public')->put('avatar', $request->file('avatar'));
             $user->fill(['avatar' => asset($path)])->save();
         }
         $user->users()->attach($request->get('users'));

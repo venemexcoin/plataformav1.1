@@ -1,13 +1,19 @@
-@extends("theme.$theme.layouts")
+@extends("theme1.$theme5.layouts")
 
 @section("titles")
-Usuarios
+Ver Usuarios
 @endsection
 @section("homeD")
+{{ route('home')}}
+@endsection
+@section("homeL")
 {{ route('users.index')}}
 @endsection
 @section("homeT")
-Usuarios
+Home
+@endsection
+@section("layout")
+User
 @endsection
 
 @section("styles")

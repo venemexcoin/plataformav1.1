@@ -66,14 +66,12 @@ class PostController extends Controller
     public function store(PostStoreRequest $request)
     {
         $post = Post::create($request->all());
-
         if($request->file('file')){
             $path = Storage::disk('public')->put('image',$request->file('file'));
             $post->fill(['file' => asset($path)])->save();
         }
             //Tags
         $post->tags()->attach($request->get('tags'));
-
         return redirect()->route('posts.edit', compact('post'))
         ->with('info', 'Entrada creada con éxito');
     }
@@ -119,12 +117,9 @@ class PostController extends Controller
      */
     public function update(PostUpdateRequest $request, $id)
     {
-
         $post = Post::find($id);
         $this->authorize('pass', $post);
-
         $post->fill($request->all())->save();
-
         // IMAGE
         if($request->file('file')){
             $path = Storage::disk('public')->put('image',$request->file('file'));
@@ -132,7 +127,6 @@ class PostController extends Controller
         }
             //Tags
         $post->tags()->sync($request->get('tags'));
-
         return redirect()->route('posts.edit', $post->id)
             ->with('info', 'Entrada actualizada con éxito');
     }

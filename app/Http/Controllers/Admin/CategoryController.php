@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Caffeinated\Shinobi\Models\Role;
 use Caffeinated\Shinobi\Models\Permission;
 use App\Category;
-use App\Http\Requests\CategoryStoreRequest;
+use App\Http\Requests\categoryStoreRequest;
 use App\Http\Requests\CategoryUpdateRequest;
 
 class CategoryController extends Controller
@@ -54,7 +54,7 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CategoryStoreRequest $request)
+    public function store(categoryStoreRequest $request)
     {
         $category = Category::create($request->all());
 

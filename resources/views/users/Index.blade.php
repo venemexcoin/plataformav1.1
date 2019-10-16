@@ -1,13 +1,19 @@
-@extends("theme.$theme.layouts")
+@extends("theme1.$theme5.layouts")
 
 @section("titles")
-Usuarios
+Categorias
 @endsection
 @section("homeD")
-{{ route('admin.index')}}
+{{ route('home')}}
+@endsection
+@section("homeL")
+{{ route('blog')}}
 @endsection
 @section("homeT")
-Panel Admi
+Home
+@endsection
+@section("layout")
+blog
 @endsection
 
 @section("styles")
@@ -88,10 +94,9 @@ Panel Admi
     </div>
   </div>
 
-@endsection
+  @endsection
 
-@section('scripts')
-<script>
 
-</script>
-@endsection
+  @section("scripts")
+
+  @endsection
