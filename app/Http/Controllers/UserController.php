@@ -86,12 +86,13 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        // Actualiza el usuario
+        //dd($request->file('avatar'));
+        //Actualiza el usuario
         $user->update($request->all());
 
          // Imagen
          if($request->file('avatar')){
-            $path = Storage::disk('public')->put('vavatar', $request->file('avatar'));
+            $path = Storage::disk('public')->put('avatar', $request->file('avatar'));
             $user->fill(['avatar' => asset($path)])->save();
         }
 

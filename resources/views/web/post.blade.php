@@ -27,7 +27,7 @@ Blog
       <div class="card-header">
         <div class="user-block">
           <img class="img-circle" src="{{auth::user()->avatar}}" alt="User Image">
-          <span class="username"><a href="#">Jonathan Burke Jr.</a></span>
+        <span class="username"><a href="#">{{$post->user_id }}</a></span>
           <span class="description">{{$post->name}}</span>
           <hr>
            <span class="blog-header">Categorías</span>
